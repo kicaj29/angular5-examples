@@ -1,3 +1,8 @@
-<p>
-  change-detection-strategy works!
-</p>
+<input #newFood type="text" placeholder="Enter a new food">
+<button (click)="addFood(newFood.value)">Add food</button>
+<button (click)="refresh()">detectChanges</button>
+<br>
+<br>
+<button (click)="addFoodRxjs(newFood.value)">Add food RxJs</button>
+
+<child [data]="foods" [dataFromRxJs]="foodsObservable" #childComponent></child>
