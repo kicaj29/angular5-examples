@@ -3,6 +3,6 @@
 <button (click)="refresh()">detectChanges</button>
 <br>
 <br>
-<button (click)="addFoodRxjs(newFood.value)">Add food RxJs</button>
+<button (click)="addFoodRxjs(newFood.value)">Add food to observable</button>
 
-<child [data]="foods" [dataFromRxJs]="foodsObservable" #childComponent></child>
+<child [foods]="foods" [foodsObservable]="foodsObservable" #childComponent></child>

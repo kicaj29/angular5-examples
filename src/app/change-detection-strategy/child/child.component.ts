@@ -11,20 +11,23 @@ export class ChildComponent implements OnInit {
 
   constructor(private cd: ChangeDetectorRef) { }
 
-  @Input() data: string[];
+  @Input() foods: string[];
 
-  @Input() dataFromRxJs: Observable<any>;
-  foods: string[] = [];
+  @Input() foodsObservable: Observable<Array<any>>;
+  foodsFromObservable: string[] = [];
 
   ngOnInit() {
-    this.dataFromRxJs.subscribe(food => {
-      this.foods = [...this.foods, ...food];
+    this.foodsObservable.subscribe(food => {
+      debugger;
+      this.foodsFromObservable = [...this.foodsFromObservable, ...food];
+      //this.foodsFromObservable = food;
       //this.cd.markForCheck();
-      this.cd.detectChanges();
+      //this.cd.detectChanges();
     });
   }
 
   refresh() {
-    this.cd.detectChanges();
+    //this.cd.detectChanges();
+    this.cd.markForCheck();
   }
 }

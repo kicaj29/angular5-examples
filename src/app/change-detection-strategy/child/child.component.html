@@ -1,11 +1,17 @@
 <br>
 <br>qweqw
-<label>From data:</label>
-<ul>
-  <li *ngFor="let item of data">{{ item }}</li>
-</ul>
-<label>From foods rxjs:</label>
+<label>From foods:</label>
 <ul>
   <li *ngFor="let item of foods">{{ item }}</li>
 </ul>
+<label>From foods based on observable:</label>
+<ul>
+  <li *ngFor="let item of foodsFromObservable">{{ item }}</li>
+</ul>
+<label>From foods observable:</label>
+<ul>
+  <li *ngFor="let item of foodsObservable | async">{{ item }}</li>
+</ul>
+
+
 
