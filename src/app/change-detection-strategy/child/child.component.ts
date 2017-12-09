@@ -18,7 +18,6 @@ export class ChildComponent implements OnInit {
 
   ngOnInit() {
     this.foodsObservable.subscribe(food => {
-      debugger;
       this.foodsFromObservable = [...this.foodsFromObservable, ...food];
       //this.foodsFromObservable = food;
       //this.cd.markForCheck();
