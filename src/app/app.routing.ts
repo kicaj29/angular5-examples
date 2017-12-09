@@ -10,6 +10,10 @@ export let appRoutes: Routes = [
   {
     path: 'change-detection-strategy',
     loadChildren: './change-detection-strategy/change-detection-strategy.module#ChangeDetectionStrategyModule'
+  },
+  {
+    path: 'lifecycle-and-expression-changed',
+    loadChildren: './lifecycle-expressionChangedAfterItHasBeenCheckedError-example/lifecycle-expression-changed-after-it-has-been-checked-error-example.module#LifecycleExpressionChangedAfterItHasBeenCheckedErrorExampleModule'
   }
 ]
 

@@ -20,3 +20,7 @@ https://alligator.io/angular/change-detection-strategy/
 https://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 https://angular.io/api/core/ChangeDetectorRef#changedetectorref   
 https://stackoverflow.com/questions/41364386/whats-the-difference-between-markforcheck-and-detectchanges/45396740#45396740   
+https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4   
+
+## Lifecycle and 'expressionChangedAfterItHasBeenCheckedError-example'
+https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
