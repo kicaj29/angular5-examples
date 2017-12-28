@@ -1,25 +1,30 @@
-import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
+import { BannerComponent } from './banner.component';
 
-import { BannerInlineComponent } from './banner-inline.component';
+describe('BannerComponent (ext template)', () => {
 
-describe('BannerComponent (inline template)', () => {
-
-  let comp:    BannerInlineComponent;
-  let fixture: ComponentFixture<BannerInlineComponent>;
+  let comp:    BannerComponent;
+  let fixture: ComponentFixture<BannerComponent>;
   let de:      DebugElement;
   let el:      HTMLElement;
 
-  beforeEach(() => {
+  // async beforeEach
+  /*beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BannerInlineComponent ] // declare the test component
-      /*providers: [
-        { provide: ComponentFixtureAutoDetect, useValue: true  }
-      ]*/
+      declarations: [ BannerComponent ], // declare the test component
+    })
+      .compileComponents();  // compile template and css, NOT NEEDED WHEN WEBPACK IS USED!!!
+  }));*/
+
+  beforeEach(() => {
+
+    TestBed.configureTestingModule({
+      declarations: [ BannerComponent ], // declare the test component
     });
 
-    fixture = TestBed.createComponent(BannerInlineComponent);
+    fixture = TestBed.createComponent(BannerComponent);
 
     comp = fixture.componentInstance; // BannerComponent test instance
 

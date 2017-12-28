@@ -30,3 +30,15 @@ https://blog.angularindepth.com/everything-you-need-to-know-about-the-expression
 
 ## Testing
 https://angular.io/guide/testing
+
+### Test a component
+The ComponentFixtureAutoDetect service responds to asynchronous activities such as promise resolution, timers, and DOM events.
+But a direct, synchronous update of the component property is invisible. The test must call fixture.detectChanges() manually to trigger another cycle of change detection.
+
+### Test a component with external template
+First beforeEach must be asynchronous, next synchronous or use then from promise returned by compileComponents().
+__WebPack developers need not call compileComponents because it inlines templates and css as part of the automated build process that precedes running the test.__
+
+### Test a component with a dependency
+Do not reference the userServiceStub object that's provided to the testing module in the body of your test.
+It does not work! The userService instance injected into the component is a completely different object, a clone of the provided userServiceStub.
