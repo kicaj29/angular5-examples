@@ -27,3 +27,6 @@ https://blog.angularindepth.com/everything-you-need-to-know-about-the-expression
 *   The culprit is always the child component or a directive.
 *   Angular enforces so-called unidirectional data flow from top to bottom. No component lower in hierarchy is allowed to update properties of a parent component __after parent changes have been processed__.
 *   expressionChangedAfterItHasBeenCheckedError is only for dev mode, it will not happen in prod mode, why? *'I guess this is because an unstable model is not as dramatic problem as a runtime error produced by the framework. After all it may stabilize in the next digest run. However, it’s better to be notified of the possible error when developing an application than debug a running application on the client side.'*
+
+## Testing
+https://angular.io/guide/testing

@@ -19,7 +19,7 @@ export class BComponent implements OnInit {
     console.log('B: ngOnInit');
 
     //This causes ExpressionChangedAfterItHasBeenCheckedError:
-    //this.parent.atext = 'TEXT - update onInit';
+    this.parent.atext = 'TEXT - update onInit';
     //NOTE: see in details of ExpressionChangedAfterItHasBeenCheckedError (DebugContext -> view -> old values)
     //that for atext we have 2 values and for aname only 1 value. Probably it is caused
     //by passing atext as input to BComponent
@@ -33,7 +33,7 @@ export class BComponent implements OnInit {
   ngAfterViewInit(){
     console.log('B: ngAfterViewInit');
     //This causes ExpressionChangedAfterItHasBeenCheckedError:
-    this.parent.aname = 'NAME - update AfterViewInit!';
+    //this.parent.aname = 'NAME - update AfterViewInit!';
   }
 
   ngAfterViewChecked(){

@@ -14,6 +14,10 @@ export let appRoutes: Routes = [
   {
     path: 'lifecycle-and-expression-changed',
     loadChildren: './lifecycle-expressionChangedAfterItHasBeenCheckedError-example/lifecycle-expression-changed-after-it-has-been-checked-error-example.module#LifecycleExpressionChangedAfterItHasBeenCheckedErrorExampleModule'
+  },
+  {
+    path: 'testing',
+    loadChildren: './testing/testing.module#TestingModule'
   }
 ]
 
