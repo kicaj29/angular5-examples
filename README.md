@@ -50,3 +50,7 @@ https://angular.io/guide/testing#test-a-component-with-an-async-service
 
 You can't call async or fakeAsync when testing code that involves the intervalTimer, as is common when testing async Observable methods.
 For such case you have to use __done__ callback.
+
+### Test a component with inputs and outputs
+https://angular.io/guide/testing#test-a-component-with-inputs-and-outputs   
+It contains example with testing the component directly and also via TestHostComponent. 
