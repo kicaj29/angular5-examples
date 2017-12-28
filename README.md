@@ -41,4 +41,12 @@ __WebPack developers need not call compileComponents because it inlines template
 
 ### Test a component with a dependency
 Do not reference the userServiceStub object that's provided to the testing module in the body of your test.
-It does not work! The userService instance injected into the component is a completely different object, a clone of the provided userServiceStub.
+It does not work! The userService instance injected into the component is a completely different object, a clone of the provided userServiceStub.   
+
+https://angular.io/guide/testing#test-a-component-with-a-dependency
+
+### Test a component with an async service
+https://angular.io/guide/testing#test-a-component-with-an-async-service
+
+You can't call async or fakeAsync when testing code that involves the intervalTimer, as is common when testing async Observable methods.
+For such case you have to use __done__ callback.
