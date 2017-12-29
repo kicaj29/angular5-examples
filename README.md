@@ -53,4 +53,9 @@ For such case you have to use __done__ callback.
 
 ### Test a component with inputs and outputs
 https://angular.io/guide/testing#test-a-component-with-inputs-and-outputs   
-It contains example with testing the component directly and also via TestHostComponent. 
+It contains example with testing the component directly and also via TestHostComponent.
+
+### Test a component with ngModel
+NgModel is asynchronous!!!
+https://medium.com/@sevcsik/testing-ngmodel-in-angular-2-d9c79923f973
+https://shekhargulati.com/2017/07/13/unit-testing-ngmodel-in-angular-4/
