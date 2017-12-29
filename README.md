@@ -56,6 +56,6 @@ https://angular.io/guide/testing#test-a-component-with-inputs-and-outputs
 It contains example with testing the component directly and also via TestHostComponent.
 
 ### Test a component with ngModel
-NgModel is asynchronous!!!
-https://medium.com/@sevcsik/testing-ngmodel-in-angular-2-d9c79923f973
+NgModel is asynchronous: https://github.com/angular/angular/commit/f444c11d218d26ac817d5f3b12e19c6b4b8d2390   
+https://medium.com/@sevcsik/testing-ngmodel-in-angular-2-d9c79923f973   
 https://shekhargulati.com/2017/07/13/unit-testing-ngmodel-in-angular-4/
