@@ -13,46 +13,12 @@ export const COMP_PARENT_CONTROL_VALUE_ACCESSOR: any = {
   styleUrls: ['./comp-parent.component.scss'],
   providers: [COMP_PARENT_CONTROL_VALUE_ACCESSOR]
 })
-export class CompParentComponent implements OnInit, ControlValueAccessor {
+export class CompParentComponent {
 
     constructor() { }
 
     @Input()
-    public innerValue: string = '';
+    public prop1: string = '';
 
-    propagateChange: (_: any) => {};
-
-    propagateTouched = () => {};
-
-    writeValue(obj: any): void {
-        if ((obj) && (obj !== this.innerValue)) {
-            this.innerValue = obj;
-        }
-    }
-
-    registerOnChange(fn: any): void {
-        this.propagateChange = fn;
-    }
-
-    registerOnTouched(fn: any): void {
-        this.propagateTouched = fn;
-    }
-
-    setDisabledState(isDisabled: boolean): void {
-    }
-
-    ngOnInit() {
-    }
-
-    get value(): any {
-        return this.innerValue;
-    };
-
-    set value(v: any) {
-        if (v !== this.innerValue) {
-            this.innerValue = v;
-            this.propagateChange(v);
-        }
-    }
-
+    public prop2: string = '';
 }
