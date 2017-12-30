@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
-describe('CompParentComponent', () => {
+fdescribe('CompParentComponent', () => {
   let component: CompParentComponent;
   let fixture: ComponentFixture<CompParentComponent>;
   let elProp1Input: HTMLInputElement;
@@ -60,7 +60,7 @@ describe('CompParentComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('inputes and p have correct values', () => {
+  it('INIT: inputes and p have correct values', () => {
     //use value for inputs to execute assertion
     expect(elProp1Input.value).toEqual('prop1 (@Input)');
     expect(elProp2Input.value).toEqual('prop2 (NO @Input)');
@@ -68,6 +68,28 @@ describe('CompParentComponent', () => {
     //use textContent for p tag to execute assertion
     expect(elProp1p.textContent).toEqual('prop1 (@Input)');
     expect(elProp2p.textContent).toEqual('prop2 (NO @Input)');
+  });
+
+
+  it('After user change: inputes and p have correct values', () => {
+
+    elProp1Input.value = 'xyz';
+    elProp2Input.value = 'abc';
+    elProp1Input.dispatchEvent(new Event('input')); //it triggers data binding!
+    elProp2Input.dispatchEvent(new Event('input')); //it triggers data binding!
+
+    fixture.detectChanges();
+
+    //hm it looks that whenStable is not needed but maybe without it it would work randomly
+    fixture.whenStable().then(() => {
+      //use value for inputs to execute assertion
+      expect(elProp1Input.value).toEqual('xyz');
+      expect(elProp2Input.value).toEqual('abc');
+
+      //use textContent for p tag to execute assertion
+      expect(elProp1p.textContent).toEqual('xyz');
+      expect(elProp2p.textContent).toEqual('abc');
+    });
   });
 
 });

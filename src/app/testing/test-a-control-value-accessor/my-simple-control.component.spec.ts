@@ -41,7 +41,7 @@ class TestHostComponent implements OnInit, AfterViewInit {
   }
 }
 
-fdescribe('MySimpleControlComponent in reactive forms', () => {
+describe('MySimpleControlComponent in reactive forms', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
   let el: HTMLInputElement;
@@ -82,6 +82,7 @@ fdescribe('MySimpleControlComponent in reactive forms', () => {
     el.value = 'abc';
     el.dispatchEvent(new Event('input')); //it triggers data binding!
     fixture.detectChanges();
+    //hm it looks that whenStable is not needed but maybe without it it would work randomly
     fixture.whenStable().then(() => {
       expect(el.value).toEqual('abc');
       expect(component.myForm.get('myField').value).toEqual('abc');
