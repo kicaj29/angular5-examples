@@ -61,3 +61,4 @@ https://medium.com/@sevcsik/testing-ngmodel-in-angular-2-d9c79923f973
 https://shekhargulati.com/2017/07/13/unit-testing-ngmodel-in-angular-4/
 
 ### Test a control value accessor
+Use *el.dispatchEvent(new Event('input'))* to simulate user and trigger data binding.
