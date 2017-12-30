@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
-fdescribe('CompParentComponent', () => {
+describe('CompParentComponent', () => {
   let component: CompParentComponent;
   let fixture: ComponentFixture<CompParentComponent>;
   let elProp1Input: HTMLInputElement;
