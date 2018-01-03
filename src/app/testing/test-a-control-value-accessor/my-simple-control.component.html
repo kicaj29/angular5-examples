@@ -1,7 +1,4 @@
 <p>my simple control</p>
 <div class="my-simple-control">
-  <label><ng-content></ng-content>
-    <input [(ngModel)]="value" (blur)="onBlur()" [disabled]="isDisabled">
-  </label>
-  <p>{{value}}</p>
+  <my-simple-control2 [(ngModel)]="value"></my-simple-control2>
 </div>

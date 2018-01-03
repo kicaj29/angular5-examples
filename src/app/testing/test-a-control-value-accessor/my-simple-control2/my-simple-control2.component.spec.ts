@@ -1,16 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MySimpleControlComponent } from './my-simple-control.component';
+import { MySimpleControl2Component } from './my-simple-control2.component';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MySimpleControl2Component } from './my-simple-control2/my-simple-control2.component';
 
 @Component({
   template: `
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <my-simple-control formControlName="myField"></my-simple-control>
+      <my-simple-control2 formControlName="myField"></my-simple-control2>
     </form>
   `
 })
@@ -42,7 +41,7 @@ class TestHostComponent implements OnInit, AfterViewInit {
   }
 }
 
-fdescribe('MySimpleControlComponent in reactive forms', () => {
+describe('MySimpleControl2Component in reactive forms', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
   let el: HTMLInputElement;
@@ -54,18 +53,13 @@ fdescribe('MySimpleControlComponent in reactive forms', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [TestHostComponent, MySimpleControl2Component, MySimpleControlComponent ]
+      declarations: [TestHostComponent, MySimpleControl2Component ]
     })
     fixture = TestBed.createComponent(TestHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     el = fixture.debugElement.query(By.css('input')).nativeElement;
-    //first whenStable that triggers ngModel in MySimpleControlComponent!
-    fixture.whenStable().then(() => {
-      //second whenStable that triggers ngModel in MySimpleControl2Component!
-      fixture.detectChanges();
-      fixture.whenStable();
-    });
+    fixture.whenStable();
   }));
 
   it('should create', () => {
@@ -73,7 +67,6 @@ fdescribe('MySimpleControlComponent in reactive forms', () => {
   });
 
   it('INIT: my-simpe-control should have correct value', () => {
-    //without second whenStable this test fails!!!
     expect(el.value).toEqual('123');
   });
 
