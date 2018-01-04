@@ -62,5 +62,10 @@ https://shekhargulati.com/2017/07/13/unit-testing-ngmodel-in-angular-4/
 
 ### Test a control value accessor (also with ngModel)
 Use *el.dispatchEvent(new Event('input'))* to simulate user and trigger data binding.   
-In *my-simple-control.component.spec.ts* is example with nested components and nested ngModels, in such *whenStable()* has to be called twice!
+In *my-simple-control.component.spec.ts* is example with nested components
+and nested ngModels, in such case *whenStable()* has to be called and in *then* we should call *detectChanges*.
+
+### Test a component with debounceTime
+https://medium.com/@golbie/angular-testing-async-stuff-in-the-fakedasync-zone-vs-providing-custom-schedulers-27a7f83c7774   
+
 

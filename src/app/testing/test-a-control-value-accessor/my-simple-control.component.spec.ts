@@ -42,7 +42,7 @@ class TestHostComponent implements OnInit, AfterViewInit {
   }
 }
 
-fdescribe('MySimpleControlComponent in reactive forms', () => {
+describe('MySimpleControlComponent in reactive forms', () => {
   let component: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
   let el: HTMLInputElement;
@@ -64,7 +64,7 @@ fdescribe('MySimpleControlComponent in reactive forms', () => {
     fixture.whenStable().then(() => {
       //second whenStable that triggers ngModel in MySimpleControl2Component!
       fixture.detectChanges();
-      fixture.whenStable();
+      //fixture.whenStable();
     });
   }));
 
@@ -73,7 +73,7 @@ fdescribe('MySimpleControlComponent in reactive forms', () => {
   });
 
   it('INIT: my-simpe-control should have correct value', () => {
-    //without second whenStable this test fails!!!
+    //without detectChanges in whenStable this test fails!!!
     expect(el.value).toEqual('123');
   });
 
