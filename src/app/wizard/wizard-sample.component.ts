@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WizardSampleComponent implements OnInit {
 
+  showStep3: boolean  = false;
+
   constructor() { }
 
   ngOnInit() {

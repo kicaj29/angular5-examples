@@ -8,7 +8,7 @@ import { AsyncScheduler } from 'rxjs/scheduler/AsyncScheduler';
 
 
 
-fdescribe('CompDebounceTimeComponent', () => {
+describe('CompDebounceTimeComponent', () => {
   let component: CompDebounceTimeComponent;
   let fixture: ComponentFixture<CompDebounceTimeComponent>;
   let elProp1Input: HTMLInputElement;
