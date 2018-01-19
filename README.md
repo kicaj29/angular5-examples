@@ -69,7 +69,12 @@ and nested ngModels, in such case *whenStable()* has to be called and in *then* 
 https://medium.com/@golbie/angular-testing-async-stuff-in-the-fakedasync-zone-vs-providing-custom-schedulers-27a7f83c7774
 
 ## Wizard
+It supports:
+*   Adding/removing steps for already initialized wizard
+
+Links:
 https://codepen.io/jaggedsoft/pen/xOmKxv   
+
    
 
 
