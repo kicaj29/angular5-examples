@@ -18,6 +18,10 @@ export let appRoutes: Routes = [
   {
     path: 'testing',
     loadChildren: './testing/testing.module#TestingModule'
+  },
+  {
+    path: 'wizard',
+    loadChildren: './wizard/wizard-sample.module#WizardSampleModule'
   }
 ]
 
