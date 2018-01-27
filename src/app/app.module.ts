@@ -7,7 +7,7 @@ import {
   HTTP_INTERCEPTORS,
   HttpClientModule
 } from '@angular/common/http';
-import { AuthInterceptor } from './auth-interceptor';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [

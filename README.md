@@ -76,11 +76,15 @@ Links:
 https://codepen.io/jaggedsoft/pen/xOmKxv   
 
 ## HttpClient
-Advantages in comparison to previous Http class.
+https://angular.io/guide/http#httpclient   
+Advantages in comparison to previous Http class:
 *   it is generic, e.g you can do
 ```
 this.http.get<Customer>
 ```
+*   class for handling errors HttpErrorResponse. It covers client side and network errors and also errors returned by the backend. In Http class was used type any.
+*   interceptors
+
    
 
 
