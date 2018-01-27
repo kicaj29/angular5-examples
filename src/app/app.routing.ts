@@ -22,7 +22,11 @@ export let appRoutes: Routes = [
   {
     path: 'wizard',
     loadChildren: './wizard/wizard-sample.module#WizardSampleModule'
-  }
+  },
+  {
+    path: 'http-client',
+    loadChildren: './http-client-example/http-client-example.module#HttpClientExampleModule'
+  },
 ]
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

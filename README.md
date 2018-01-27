@@ -75,6 +75,12 @@ It supports:
 Links:
 https://codepen.io/jaggedsoft/pen/xOmKxv   
 
+## HttpClient
+Advantages in comparison to previous Http class.
+*   it is generic, e.g you can do
+```
+this.http.get<Customer>
+```
    
 
 
