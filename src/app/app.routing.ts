@@ -27,6 +27,10 @@ export let appRoutes: Routes = [
     path: 'http-client',
     loadChildren: './http-client-example/http-client-example.module#HttpClientExampleModule'
   },
+  {
+    path: 'customization',
+    loadChildren: './customization/customization.module#CustomizationModule'
+  }
 ]
 
 export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

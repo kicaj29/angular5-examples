@@ -89,6 +89,14 @@ this.http.get<Customer>
 *   interceptors
 *   HttpParams is immutable
 
-   
+## Customization
+https://denysvuika.blog/2017/10/07/dynamic-content-in-angular/   
+https://alligator.io/angular/content-projection-angular/   
+https://blog.angularindepth.com/exploring-angular-dom-abstractions-80b3ebcfc02   
+https://alligator.io/angular/using-renderer2/   
+https://www.concretepage.com/angular-2/angular-4-renderer2-example   
+https://embed.plnkr.co/7DJ1nWN6sl563hcR71FV/   
+https://github.com/angular/angular/issues/19515   
+https://stackoverflow.com/questions/36055585/renderer-multiple-selectrootelement-issue-with-plnkr-provided   
 
 
