@@ -1,11 +1,14 @@
 import {
   AfterContentInit,
   Component,
+  ComponentFactoryResolver,
   ContentChildren,
   OnInit,
-  QueryList
+  QueryList,
+  ViewContainerRef
 } from '@angular/core';
 import { WizardStepComponent } from './wizard-step/wizard-step.component';
+import { SimpleComponent } from '../simple/simple.component';
 
 @Component({
   selector: 'wizard-control',
@@ -16,7 +19,7 @@ export class WizardControlComponent implements OnInit, AfterContentInit {
 
   @ContentChildren(WizardStepComponent) steps: QueryList<WizardStepComponent>
 
-  constructor() { }
+  constructor(private _vcRef: ViewContainerRef, private _cfr: ComponentFactoryResolver) { }
 
   ngOnInit() {
 
@@ -48,5 +51,21 @@ export class WizardControlComponent implements OnInit, AfterContentInit {
 
   onCancel() {
 
+  }
+
+  onAddNew(){
+    const simpleFactory = this._cfr.resolveComponentFactory(SimpleComponent);
+    let simpleRef = this._vcRef.createComponent(simpleFactory);
+
+    const stepFactory = this._cfr.resolveComponentFactory(WizardStepComponent);
+
+    const stepRef = this._vcRef.createComponent(
+      stepFactory,
+      0,
+      undefined,
+      [
+        [simpleRef.location.nativeElement]
+      ]
+    );
   }
 }

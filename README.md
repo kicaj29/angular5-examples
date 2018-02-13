@@ -74,6 +74,9 @@ It supports:
 
 Links:
 https://codepen.io/jaggedsoft/pen/xOmKxv   
+https://github.com/angular/angular/issues/8563   
+https://stackoverflow.com/questions/44284026/creating-a-angular2-component-with-ng-content-dynamically   
+https://plnkr.co/edit/vfVsBnoOnhDFVuN9COl4?p=preview   
 
 ## HttpClient
 https://angular.io/guide/http#httpclient   
@@ -84,6 +87,7 @@ this.http.get<Customer>
 ```
 *   class for handling errors HttpErrorResponse. It covers client side and network errors and also errors returned by the backend. In Http class was used type any.
 *   interceptors
+*   HttpParams is immutable
 
    
 

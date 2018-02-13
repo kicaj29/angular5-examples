@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
   HttpClient,
-  HttpErrorResponse
+  HttpErrorResponse,
+  HttpParams
 } from '@angular/common/http';
 import { Customer } from './customer';
 
@@ -20,7 +21,9 @@ export class HttpClientExampleComponent implements OnInit {
   }
 
   getCustomer() {
-    this.http.get<Customer>('/data/customer.json').subscribe(
+    this.http.get<Customer>('/data/customer1.json', {
+      params: new HttpParams().set('id', '3').append('par1', 'xxx').append('par1', 'yyy')
+    }).subscribe(
       (data: Customer) => {
           this.result = data;
         },
