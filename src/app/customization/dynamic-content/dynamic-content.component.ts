@@ -4,8 +4,7 @@ import {
   ComponentFactoryResolver, ComponentRef
 } from '@angular/core';
 import { DynamicComponent } from './dynamic-component';
-import { Extension1Component } from '../extension1/extension1.component';
-import { Extension2Component } from '../extension2/extension2.component';
+import { extensionsMappings } from '../extenstions';
 
 @Component({
   selector: 'dynamic-content',
@@ -26,10 +25,7 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   @Input()
   context: T;
 
-  private mappings = {
-    'ext1': Extension1Component,
-    'ext2': Extension2Component,
-  };
+  private mappings = [...extensionsMappings];
 
   private componentRef: ComponentRef<{}>;
 
@@ -38,8 +34,14 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   }
 
   getComponentType(typeName: string) {
-    let type = this.mappings[typeName];
-    return type || UnknownDynamicComponent;
+    //let type = this.mappings[typeName];
+    //return type || UnknownDynamicComponent;
+    let mapping = this.mappings.find(value => value.name === typeName);
+    if (mapping) {
+      return mapping.type;
+    } else {
+      return UnknownDynamicComponent;
+    }
   }
 
   ngOnInit() {

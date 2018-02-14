@@ -8,7 +8,9 @@ import {
 } from './dynamic-content/dynamic-content.component';
 import { DynamicContentDemoComponent } from './dynamic-content-demo/dynamic-content-demo.component';
 import { FormsModule } from '@angular/forms';
-import { extensions } from './extenstions';
+import {
+  extensionsTypes
+} from './extenstions';
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { extensions } from './extenstions';
     routing,
     FormsModule
   ],
-  declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, UnknownDynamicComponent, ...extensions],
-  entryComponents: [UnknownDynamicComponent, ...extensions]
+  declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, UnknownDynamicComponent, ...extensionsTypes],
+  entryComponents: [UnknownDynamicComponent, ...extensionsTypes]
 })
 export class CustomizationModule { }
