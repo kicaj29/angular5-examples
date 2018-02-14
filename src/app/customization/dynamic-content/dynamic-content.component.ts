@@ -1,14 +1,10 @@
 import {
-  Component,
-  ComponentFactoryResolver,
-  ComponentRef,
-  Input,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  ViewContainerRef
+  Component, Input, OnInit, OnDestroy,
+  ViewChild, ViewContainerRef,
+  ComponentFactoryResolver, ComponentRef
 } from '@angular/core';
-import { ViewModel } from '../dynamic-content-demo/view-model';
+import { DynamicComponent } from './dynamic-component';
+import { Extension1Component } from '../extension1/extension1.component';
 
 @Component({
   selector: 'dynamic-content',
@@ -27,11 +23,12 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   type: string;
 
   @Input()
-  context: any;
+  context: T;
 
   private mappings = {
-    'ext1': Extension1Component
-    // 'sample2': DynamicSample2Component
+    'sample1': DynamicSample1Component,
+    'sample2': DynamicSample2Component,
+    'ext1': Extension1Component,
   };
 
   private componentRef: ComponentRef<{}>;
@@ -68,9 +65,6 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
 
 }
 
-export abstract class DynamicComponent<T> {
-  context: T;
-}
 
 @Component({
   selector: 'dynamic-sample-1',
@@ -89,21 +83,3 @@ export class DynamicSample2Component extends DynamicComponent<any> {}
   template: `<div>Unknown component ({{context?.text}})</div>`
 })
 export class UnknownDynamicComponent extends DynamicComponent<any> {}
-
-@Component({
-  selector: 'extension1',
-  template: `
-    <p>tralallaa</p>    
-    <span>{{context.FirstName}} {{context.SecondName}}</span>
-  `
-})
-export class Extension1Component extends DynamicComponent<ViewModel> implements OnInit {
-
-  constructor() {
-    super();
-  }
-
-  ngOnInit() {
-  }
-
-}

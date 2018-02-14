@@ -8,6 +8,10 @@ import { ViewModel } from './view-model';
 })
 export class DynamicContentDemoComponent implements OnInit {
 
+  context: any = {
+    text: 'test'
+  }
+
   viewModel: ViewModel;
 
   constructor() {
