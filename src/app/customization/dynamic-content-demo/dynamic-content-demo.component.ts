@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewModel } from './view-model';
 
 @Component({
   selector: 'dynamic-content-demo',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicContentDemoComponent implements OnInit {
 
-  context: any = {
-    text: 'test'
-  }
+  viewModel: ViewModel;
 
-  constructor() { }
+  constructor() {
+    this.viewModel = new ViewModel();
+    this.viewModel.FirstName = "Jacek";
+    this.viewModel.SecondName = "Kowalski";
+  }
 
   ngOnInit() {
   }

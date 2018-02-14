@@ -8,6 +8,7 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+import { ViewModel } from '../dynamic-content-demo/view-model';
 
 @Component({
   selector: 'dynamic-content',
@@ -17,7 +18,7 @@ import {
         </div>
     `
 })
-export class DynamicContentComponent implements OnInit, OnDestroy {
+export class DynamicContentComponent<T> implements OnInit, OnDestroy {
 
   @ViewChild('container', { read: ViewContainerRef })
   container: ViewContainerRef;
@@ -29,8 +30,8 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
   context: any;
 
   private mappings = {
-    'sample1': DynamicSample1Component,
-    'sample2': DynamicSample2Component
+    'ext1': Extension1Component
+    // 'sample2': DynamicSample2Component
   };
 
   private componentRef: ComponentRef<{}>;
@@ -53,7 +54,7 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
       this.componentRef = this.container.createComponent(factory);
 
       // set component context
-      let instance = <DynamicComponent> this.componentRef.instance;
+      let instance = <DynamicComponent<T>> this.componentRef.instance;
       instance.context = this.context;
     }
   }
@@ -67,24 +68,42 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
 
 }
 
-export abstract class DynamicComponent {
-  context: any;
+export abstract class DynamicComponent<T> {
+  context: T;
 }
 
 @Component({
   selector: 'dynamic-sample-1',
   template: `<div>Dynamic sample 1 ({{context?.text}})</div>`
 })
-export class DynamicSample1Component extends DynamicComponent {}
+export class DynamicSample1Component extends DynamicComponent<any> {}
 
 @Component({
   selector: 'dynamic-sample-2',
   template: `<div>Dynamic sample 2 ({{context?.text}})</div>`
 })
-export class DynamicSample2Component extends DynamicComponent {}
+export class DynamicSample2Component extends DynamicComponent<any> {}
 
 @Component({
   selector: 'unknown-component',
   template: `<div>Unknown component ({{context?.text}})</div>`
 })
-export class UnknownDynamicComponent extends DynamicComponent {}
+export class UnknownDynamicComponent extends DynamicComponent<any> {}
+
+@Component({
+  selector: 'extension1',
+  template: `
+    <p>tralallaa</p>    
+    <span>{{context.FirstName}} {{context.SecondName}}</span>
+  `
+})
+export class Extension1Component extends DynamicComponent<ViewModel> implements OnInit {
+
+  constructor() {
+    super();
+  }
+
+  ngOnInit() {
+  }
+
+}
