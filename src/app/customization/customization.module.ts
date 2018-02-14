@@ -4,8 +4,6 @@ import { CustomizationComponent } from './customization.component';
 import { routing } from './customization.routing';
 import {
   DynamicContentComponent,
-  DynamicSample1Component,
-  DynamicSample2Component,
   UnknownDynamicComponent
 } from './dynamic-content/dynamic-content.component';
 import { DynamicContentDemoComponent } from './dynamic-content-demo/dynamic-content-demo.component';
@@ -18,8 +16,7 @@ import { Extension1Component } from './extension1/extension1.component';
     routing,
     FormsModule
   ],
-  declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, DynamicSample1Component,
-    DynamicSample2Component, UnknownDynamicComponent, Extension1Component],
-  entryComponents: [DynamicSample1Component, DynamicSample2Component, UnknownDynamicComponent, Extension1Component]
+  declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, UnknownDynamicComponent, Extension1Component],
+  entryComponents: [UnknownDynamicComponent, Extension1Component]
 })
 export class CustomizationModule { }

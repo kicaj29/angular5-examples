@@ -26,9 +26,7 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   context: T;
 
   private mappings = {
-    'sample1': DynamicSample1Component,
-    'sample2': DynamicSample2Component,
-    'ext1': Extension1Component,
+    'ext1': Extension1Component
   };
 
   private componentRef: ComponentRef<{}>;
@@ -64,19 +62,6 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   }
 
 }
-
-
-@Component({
-  selector: 'dynamic-sample-1',
-  template: `<div>Dynamic sample 1 ({{context?.text}})</div>`
-})
-export class DynamicSample1Component extends DynamicComponent<any> {}
-
-@Component({
-  selector: 'dynamic-sample-2',
-  template: `<div>Dynamic sample 2 ({{context?.text}})</div>`
-})
-export class DynamicSample2Component extends DynamicComponent<any> {}
 
 @Component({
   selector: 'unknown-component',

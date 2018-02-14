@@ -1,10 +1,6 @@
 <div>
   <h2>Dynamic content</h2>
-  <h3>Context: <input type="text" [(ngModel)]="context.text"></h3>
   <h3>First name: <input type="text" [(ngModel)]="viewModel.FirstName"></h3>
   <h3>Second name: <input type="text" [(ngModel)]="viewModel.SecondName"></h3>
-  <dynamic-content type="sample1" [context]="context"></dynamic-content>
-  <dynamic-content type="sample2" [context]="context"></dynamic-content>
-  <dynamic-content type="some-other-type" [context]="context"></dynamic-content>
   <dynamic-content type="ext1" [context]="viewModel"></dynamic-content>
 </div>
