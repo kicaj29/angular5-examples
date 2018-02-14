@@ -69,6 +69,6 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
 
 @Component({
   selector: 'unknown-component',
-  template: `<div>Unknown component ({{context?.text}})</div>`
+  template: `<div></div>`
 })
 export class UnknownDynamicComponent extends DynamicComponent<any> {}

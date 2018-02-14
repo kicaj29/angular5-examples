@@ -13,5 +13,5 @@ export const extensionsMappings = [
   {
     'name': 'ext2',
     'type': Extension2Component
-  },
+  }
 ];
