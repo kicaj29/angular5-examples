@@ -8,13 +8,12 @@ import { ViewModel } from './view-model';
 })
 export class DynamicContentDemoComponent implements OnInit {
 
-  context: any = {
-    text: 'test'
-  }
-
   viewModel: ViewModel;
-
+  instance: DynamicContentDemoComponent;
   constructor() {
+
+    this.instance = this;
+
     this.viewModel = new ViewModel();
     this.viewModel.FirstName = "Jacek";
     this.viewModel.SecondName = "Kowalski";

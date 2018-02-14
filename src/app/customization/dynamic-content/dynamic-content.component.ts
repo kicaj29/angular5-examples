@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import { DynamicComponent } from './dynamic-component';
 import { Extension1Component } from '../extension1/extension1.component';
+import { Extension2Component } from '../extension2/extension2.component';
 
 @Component({
   selector: 'dynamic-content',
@@ -26,7 +27,8 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   context: T;
 
   private mappings = {
-    'ext1': Extension1Component
+    'ext1': Extension1Component,
+    'ext2': Extension2Component,
   };
 
   private componentRef: ComponentRef<{}>;
