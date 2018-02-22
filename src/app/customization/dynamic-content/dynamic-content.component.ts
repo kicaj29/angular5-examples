@@ -1,7 +1,13 @@
 import {
-  Component, Input, OnInit, OnDestroy,
-  ViewChild, ViewContainerRef,
-  ComponentFactoryResolver, ComponentRef
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  ComponentRef,
+  Type
 } from '@angular/core';
 import { DynamicComponent } from './dynamic-component';
 import { extensionsMappings } from '../extenstions';

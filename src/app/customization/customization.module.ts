@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {
   extensionsTypes
 } from './extenstions';
+import { AnotherService } from './services/another.service.ts';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {
     routing,
     FormsModule
   ],
+  providers: [AnotherService],
   declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, UnknownDynamicComponent, ...extensionsTypes],
   entryComponents: [UnknownDynamicComponent, ...extensionsTypes]
 })
