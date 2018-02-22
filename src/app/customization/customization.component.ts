@@ -8,6 +8,7 @@ import {
   superCalculatorProvider,
   SuperCalculatorService
 } from './services/super-calculator.service';
+import { extensionsServices } from './extenstions';
 
 @Component({
   selector: 'app-customization',
@@ -15,7 +16,7 @@ import {
   styleUrls: ['./customization.component.css'],
   providers: [
     calculatorProvider,
-    superCalculatorProvider
+    ...extensionsServices
     ]
 })
 export class CustomizationComponent implements OnInit {
