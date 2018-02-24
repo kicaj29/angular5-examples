@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Comp1Component implements OnInit {
 
-  IsComp1Loading: boolean;
+  IsComp1Loading: boolean = false;
   constructor() { }
 
   ngOnInit() {
