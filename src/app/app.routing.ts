@@ -30,6 +30,10 @@ export let appRoutes: Routes = [
   {
     path: 'customization',
     loadChildren: './customization/customization.module#CustomizationModule'
+  },
+  {
+    path: 'components-interaction',
+    loadChildren: './components-interaction/components-interaction.module#ComponentsInteractionModule'
   }
 ]
 

@@ -97,6 +97,8 @@ https://alligator.io/angular/using-renderer2/
 https://www.concretepage.com/angular-2/angular-4-renderer2-example   
 https://embed.plnkr.co/7DJ1nWN6sl563hcR71FV/   
 https://github.com/angular/angular/issues/19515   
-https://stackoverflow.com/questions/36055585/renderer-multiple-selectrootelement-issue-with-plnkr-provided   
+https://stackoverflow.com/questions/36055585/renderer-multiple-selectrootelement-issue-with-plnkr-provided
+
+## Components interaction   
 
 
