@@ -6,12 +6,12 @@ import {
   DynamicContentComponent,
   UnknownDynamicComponent
 } from './dynamic-content/dynamic-content.component';
-import { DynamicContentDemoComponent } from './dynamic-content-demo/dynamic-content-demo.component';
 import { FormsModule } from '@angular/forms';
 import {
   extensionsTypes
 } from './extenstions';
 import { AnotherService } from './services/another.service.ts';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { AnotherService } from './services/another.service.ts';
     FormsModule
   ],
   providers: [AnotherService],
-  declarations: [CustomizationComponent, DynamicContentDemoComponent, DynamicContentComponent, UnknownDynamicComponent, ...extensionsTypes],
+  declarations: [CustomizationComponent, CustomerComponent, DynamicContentComponent, UnknownDynamicComponent, ...extensionsTypes],
   entryComponents: [UnknownDynamicComponent, ...extensionsTypes]
 })
 export class CustomizationModule { }

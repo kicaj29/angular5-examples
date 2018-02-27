@@ -1,4 +1,4 @@
-export class ViewModel {
+export class CustomerViewModel {
   FirstName: string;
   SecondName: string;
 }
