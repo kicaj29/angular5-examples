@@ -1,0 +1,9 @@
+<div>
+  <h2>Customer</h2>
+  <h3>First name: <input type="text" [(ngModel)]="viewModel.FirstName"></h3>
+  <h3>Second name: <input type="text" [(ngModel)]="viewModel.SecondName"></h3>
+  <h3>Special: <input type="checkbox" [(ngModel)]="viewModel.IsSpecial"></h3>
+  <dynamic-content type="ext-level1-greeting" [context]="instance"></dynamic-content>
+  <dynamic-content type="ext-level2-special" [context]="instance"></dynamic-content>
+  <button (click)="save()">Save</button>
+</div>

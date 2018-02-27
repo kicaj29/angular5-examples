@@ -10,7 +10,9 @@ import {
   Type
 } from '@angular/core';
 import { DynamicComponent } from './dynamic-component';
-import { extensionsMappings } from '../extenstions';
+import { EXT_LEVEL1_ALL_START_COMPONENTS_MAPPING } from '../extensions/ext-level1';
+import { EXT_LEVEL2_ALL_START_COMPONENTS_MAPPING } from '../extensions/ext-level2';
+import { EXT_LEVEL3_ALL_START_COMPONENTS_MAPPING } from '../extensions/ext-level3';
 
 @Component({
   selector: 'dynamic-content',
@@ -31,7 +33,8 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
   @Input()
   context: T;
 
-  private mappings = [...extensionsMappings];
+  private mappings = [...EXT_LEVEL1_ALL_START_COMPONENTS_MAPPING, ...EXT_LEVEL2_ALL_START_COMPONENTS_MAPPING,
+    ...EXT_LEVEL3_ALL_START_COMPONENTS_MAPPING];
 
   private componentRef: ComponentRef<{}>;
 
@@ -52,6 +55,7 @@ export class DynamicContentComponent<T> implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (this.type) {
+
       let componentType = this.getComponentType(this.type);
 
       // note: componentType must be declared within module.entryComponents

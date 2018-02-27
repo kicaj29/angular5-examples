@@ -16,7 +16,7 @@ export const MY_SIMPLE_CONTROL_VALUE_ACCESSOR: any = {
 export class MySimpleControlComponent implements ControlValueAccessor {
 
   private innerValue: any = '';
-  private isDisabled: boolean = false;
+  public isDisabled: boolean = false;
 
   constructor() { }
 

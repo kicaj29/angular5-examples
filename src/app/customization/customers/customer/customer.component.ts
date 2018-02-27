@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerViewModel } from './customer.view-model';
+import { CustomerWriteBaseService } from './customer-write-base.service';
 
 @Component({
   selector: 'customer',
@@ -10,7 +11,7 @@ export class CustomerComponent implements OnInit {
 
   viewModel: CustomerViewModel;
   instance: CustomerComponent;
-  constructor() {
+  constructor(private _svc: CustomerWriteBaseService) {
 
     this.instance = this;
 
@@ -22,4 +23,7 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
   }
 
+  save() {
+    this._svc.saveCustomer(this.viewModel);
+  }
 }

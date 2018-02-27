@@ -10,20 +10,17 @@ export class WizardStepComponent implements OnInit {
   constructor() { }
 
   // TODO: how to deal with private that are accessed from the template in prod mode?
-  private _isCurrent: boolean = false;
+  public IsCurrent: boolean = false;
 
-  get IsCurrent(): any {
-    return this._isCurrent;
-  };
 
   ngOnInit() {
   }
 
   current() {
-    this._isCurrent = true;
+    this.IsCurrent = true;
   }
 
   noCurrent() {
-    this._isCurrent = false;
+    this.IsCurrent = false;
   }
 }
