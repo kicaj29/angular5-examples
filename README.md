@@ -104,7 +104,7 @@ https://stackoverflow.com/questions/36055585/renderer-multiple-selectrootelement
 ## Shadow DOM
 https://toddmotto.com/emulated-native-shadow-dom-angular-2-view-encapsulation   
 https://github.com/angular/material2/issues/3386
-*   When __Emulated__ ViewEncapsulation is used then all css classes defined for this component are encapsulated and will not impact other DOM elements.
+*   When __Emulated__ ViewEncapsulation is used in a component then all css classes defined for this component are encapsulated and will not impact other DOM elements.
 So when ShadowDomComponent uses Emulated the red color does not impact SimpleComponent even if SimpleComponent uses ViewEncapsulation.None!
 *   When __Native__ ViewEncapsulation is used on parent component then all children components also have to use __Native__ to not be impacted by classes defined for the parent.
 So when ShadowDomComponent uses __Native__ the red color does not impact SimpleComponent only if SimpleComponent uses ViewEncapsulation.Native!
