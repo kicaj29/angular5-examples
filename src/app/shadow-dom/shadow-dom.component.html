@@ -1,0 +1,21 @@
+<p>
+  wizard-sample works!
+</p>
+<wizard-control>
+  <wizard-step>
+    <div>step1</div>
+  </wizard-step>
+  <wizard-step>
+    <div>step2</div>
+  </wizard-step>
+  <wizard-step *ngIf="showStep3">
+    <div>step3</div>
+  </wizard-step>
+  <wizard-step>
+    <div>step4</div>
+  </wizard-step>
+</wizard-control>
+<br>
+<br>
+<button type="button" (click)="showStep3=true">Show step3</button>
+<button type="button" (click)="showStep3=false">Hide step3</button>
