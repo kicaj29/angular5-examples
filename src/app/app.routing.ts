@@ -34,6 +34,10 @@ export let appRoutes: Routes = [
   {
     path: 'components-interaction',
     loadChildren: './components-interaction/components-interaction.module#ComponentsInteractionModule'
+  },
+  {
+    path: 'shadow-dom',
+    loadChildren: './shadow-dom/shadow-dom.module#ShadowDomModule'
   }
 ]
 

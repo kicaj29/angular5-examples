@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WizardSampleComponent } from './wizard-sample.component';
-import { routing } from './wizard-sample.routing';
-import { WizardControlComponent } from './wizard-control/wizard-control.component';
-import { WizardStepComponent } from './wizard-control/wizard-step/wizard-step.component';
+import { routing } from './shadow-dom.routing';
+import {ShadowDomComponent} from './shadow-dom.component';
 import { SimpleComponent } from './simple/simple.component';
 
 @NgModule({
@@ -11,7 +9,6 @@ import { SimpleComponent } from './simple/simple.component';
     CommonModule,
     routing
   ],
-  declarations: [WizardSampleComponent, WizardControlComponent, WizardStepComponent, SimpleComponent],
-  entryComponents: [SimpleComponent]
+  declarations: [ShadowDomComponent, SimpleComponent]
 })
-export class WizardSampleModule { }
+export class ShadowDomModule { }
