@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import {DiDecoratorsModule} from './di-decorators/di-decorators.module';
 
 export let appRoutes: Routes = [
   {
@@ -38,6 +39,10 @@ export let appRoutes: Routes = [
   {
     path: 'shadow-dom',
     loadChildren: './shadow-dom/shadow-dom.module#ShadowDomModule'
+  },
+  {
+    path: 'di-decorators',
+    loadChildren: './di-decorators/di-decorators.module#DiDecoratorsModule'
   }
 ]
 

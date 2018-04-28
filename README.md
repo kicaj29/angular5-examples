@@ -110,4 +110,10 @@ So when ShadowDomComponent uses Emulated the red color does not impact SimpleCom
 So when ShadowDomComponent uses __Native__ the red color does not impact SimpleComponent only if SimpleComponent uses ViewEncapsulation.Native!
 *   If SCSS is used we have one entry for the SCSS compiler so then it does not make sense to refer to css files in component decorator.
 
+## DI Decorators
+https://medium.com/@tomsu/self-or-optional-host-the-visual-guide-to-angular-di-decorators-73fbbb5c8658   
+### @SkipSelf()
+### @Self()
+### @Host()
+
 
