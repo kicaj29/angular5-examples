@@ -8,6 +8,8 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
+import {StoreAppModuleService} from './store-app-module.service';
+import {StoreBaseService} from './di-decorators/comp1/store-base.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,11 @@ import { AuthInterceptor } from './auth.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
+    },
+    // di-decorators providers
+    {
+      provide: StoreBaseService,
+      useClass: StoreAppModuleService
     }
   ],
   bootstrap: [AppComponent]

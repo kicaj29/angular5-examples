@@ -111,7 +111,11 @@ So when ShadowDomComponent uses __Native__ the red color does not impact SimpleC
 *   If SCSS is used we have one entry for the SCSS compiler so then it does not make sense to refer to css files in component decorator.
 
 ## DI Decorators
-https://medium.com/@tomsu/self-or-optional-host-the-visual-guide-to-angular-di-decorators-73fbbb5c8658   
+https://medium.com/@tomsu/self-or-optional-host-the-visual-guide-to-angular-di-decorators-73fbbb5c8658
+https://angular.io/guide/providers#limiting-provider-scope-by-lazy-loading-modules   
+
+__When the Angular router lazy-loads a module, it creates a new injector. This injector is a child of the root application injector.__   
+   
 ### @SkipSelf()
 ### @Self()
 ### @Host()
