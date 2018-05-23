@@ -136,6 +136,8 @@ It registers the routers and uses the router service created at the root level*
 ## DI Modules vs Providers
 https://codecraft.tv/courses/angular/dependency-injection-and-providers/ngmodule-providers-vs-component-providers-vs-component-viewproviders/   
 https://angular.io/guide/architecture-modules   
+https://medium.com/@cyrilletuzi/understanding-angular-modules-ngmodule-and-their-scopes-81e4ed6f7407   
+*Note: since Angular 6, services don’t need to be registered in a module anymore. The use of “providers” in a NgModule is now limited to overriding existing services.*
    
 providers (for modules) — creators of services that this NgModule contributes to the __global collection__ of services; they become accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)
 
