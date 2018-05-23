@@ -34,7 +34,6 @@ let extLevel1GreetingServiceFactory = (injector: Injector) => {
   let svc = new ExtLevel1GreetingService();
   svc.setDecoratedObject(decoratedService);
   return svc;
-
 };
 
 export let extLevel1GreetingServiceProvider =

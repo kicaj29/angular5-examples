@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import {DiDecoratorsModule} from './di-decorators/di-decorators.module';
+import {DiProvidersModulesVsComponentsModule} from './di-providers-modules-vs-components/di-providers-modules-vs-components.module';
 
 export let appRoutes: Routes = [
   {
@@ -43,6 +44,10 @@ export let appRoutes: Routes = [
   {
     path: 'di-decorators',
     loadChildren: './di-decorators/di-decorators.module#DiDecoratorsModule'
+  },
+  {
+    path: 'di-providers-modules-vs-components',
+    loadChildren: './di-providers-modules-vs-components/di-providers-modules-vs-components.module#DiProvidersModulesVsComponentsModule'
   }
 ]
 

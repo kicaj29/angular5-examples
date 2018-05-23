@@ -120,4 +120,24 @@ __When the Angular router lazy-loads a module, it creates a new injector. This i
 ### @Self()
 ### @Host()
 
+## ForRoot vs ForChild
+http://weblogs.thinktecture.com/thomas/2017/05/the-real-secrets-behind-forroot-andor-forchild-of-an-ngmodule.html   
+https://stackoverflow.com/questions/40498081/routermodule-forrootroutes-vs-routermodule-forchildroutes   
+https://github.com/Yonet/Angular-Interview-Questions/blob/master/router.md   
 
+If there is some module that provides some service and there is a need to import this module in app module and lazy loaded module
+there will be created to instances of this service: one for the app module and second for the lazy loaded module.
+To be sure that there will be only one instance of the service create methods *forRoot* and *forChild* like in router module.   
+   
+   
+*forChild creates a module that contains all the directives and the given routes, but does not include the router service.
+It registers the routers and uses the router service created at the root level*
+
+## DI Modules vs Providers
+https://codecraft.tv/courses/angular/dependency-injection-and-providers/ngmodule-providers-vs-component-providers-vs-component-viewproviders/   
+https://angular.io/guide/architecture-modules   
+   
+providers (for modules) — creators of services that this NgModule contributes to the __global collection__ of services; they become accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)
+
+NOTE to the example: if ABaseService would be provided in A1 component that A1 and all A1 children components would use type ABaseService because providing it in A1 component creates
+a new injector (node) in injector tree. If ABaseService is not provided for A1 everywhere is used AdaptABaseService!
