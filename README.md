@@ -143,3 +143,6 @@ providers (for modules) — creators of services that this NgModule contributes 
 
 NOTE to the example: if ABaseService would be provided in A1 component that A1 and all A1 children components would use type ABaseService because providing it in A1 component creates
 a new injector (node) in injector tree. If ABaseService is not provided for A1 everywhere is used AdaptABaseService!
+
+## ng-template vs ng-content
+https://medium.com/michalcafe/angulars-content-projection-trap-and-why-you-should-consider-using-template-outlet-instead-cc3c4cad87c9
