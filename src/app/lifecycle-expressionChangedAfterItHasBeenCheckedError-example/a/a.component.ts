@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnChanges, OnInit} from '@angular/core';
 
 @Component({
   selector: 'lifecycle-a',
@@ -10,7 +10,7 @@ export class AComponent implements OnInit, OnChanges {
   aname: string;
   atext: string;
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
     this.aname = 'NAME';
     this.atext = 'TEXT';
     console.log('A: constructor');
@@ -42,6 +42,9 @@ export class AComponent implements OnInit, OnChanges {
 
   ngAfterViewInit(){
     console.log('A: ngAfterViewInit');
+
+    this.cd.detectChanges();
+
     //this.atext = 'updated text';
     //this.name = 'asdasdasdasdas';
   }

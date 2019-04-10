@@ -19,10 +19,14 @@ export class BComponent implements OnInit {
     console.log('B: ngOnInit');
 
     //This causes ExpressionChangedAfterItHasBeenCheckedError:
-    //this.parent.atext = 'TEXT - update onInit';
+    this.parent.atext = 'TEXT - update onInit';
     //NOTE: see in details of ExpressionChangedAfterItHasBeenCheckedError (DebugContext -> view -> old values)
     //that for atext we have 2 values and for aname only 1 value. Probably it is caused
     //by passing atext as input to BComponent
+
+    //NOTE1: if in a.component in ngAfterViewInit we call this.cd.detectChanges() then the error will not occur!!!
+
+
 
     //This does not cause ExpressionChangedAfterItHasBeenCheckedError because
     //'the ngOnInit lifecycle hook is triggered before the DOM update operation'.
@@ -48,7 +52,7 @@ export class BComponent implements OnInit {
     console.log('B: ngOnChanges');
 
     //This causes ExpressionChangedAfterItHasBeenCheckedError:
-    this.parent.atext = 'TEXT - update ngOnChanges';
+    //this.parent.atext = 'TEXT - update ngOnChanges';
   }
 
   ngDoCheck(){
